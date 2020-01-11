@@ -6,7 +6,7 @@ import Background from './components/Background/Background'
 import axios from './axios'
 import DataView from './components/DataView/DataView'
 
-function App() {
+function App () {
   const [addressData, setAddressData] = useState(null)
   const [restuarantData, setRestuarantData] = useState(null)
   const [showDataView, setShowDataView] = useState(false)
@@ -33,6 +33,9 @@ function App() {
       if (landing) {
         landing.classList.add('zoomOut')
       }
+      setTimeout(() => {
+        setShowDataView(true);
+      }, 1000)
     }
   }, [addressData, restuarantData])
 
@@ -44,11 +47,10 @@ function App() {
       setFilters={setFilters}
     />
   ) : (
-      <Landing
-        setAddressData={setAddressData}
-        setShowDataView={setShowDataView}
-      />
-    )
+    <Landing
+      setAddressData={setAddressData}
+    />
+  )
   return (
     <div className='App'>
       <Background>{view}</Background>

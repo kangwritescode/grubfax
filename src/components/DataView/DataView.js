@@ -38,7 +38,6 @@ const DataView = ({ restuarantData, addressData, filters, setFilters }) => {
 
   let filteredData = filterRestaurantData(data)
 
-  console.log(addressData, 'wot mait');
   return (
     <div className='DataView'>
       <header>

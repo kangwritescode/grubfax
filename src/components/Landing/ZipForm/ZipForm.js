@@ -45,7 +45,7 @@ const ZipForm = ({ setAddressData }) => {
   }
 
   return (
-    <form className='ZipForm'>
+    <form className='ZipForm bounceInRight'>
       <div
         className={`ZipForm__spinner-container ${
           loading ? 'ZipForm__spinner-container--show' : null

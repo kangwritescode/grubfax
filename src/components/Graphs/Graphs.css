@@ -8,11 +8,17 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 2em;
-  background: rgba(255, 255, 255, 0.575);
+  background: rgba(255, 255, 255, 0.774);
   padding: 1em;
+  opacity: 0;
+  -webkit-animation: fadeInRight .7s ease-in-out .5s forwards;
+          animation: fadeInRight .7s ease-in-out .5s forwards;
 }
 
 .Graphs__graph-wrapper:last-child {
+  opacity: 0;
   margin-bottom: 20em;
+  -webkit-animation: fadeInRight .7s ease-in-out .6s forwards;
+          animation: fadeInRight .7s ease-in-out .6s forwards;
 }
 /*# sourceMappingURL=Graphs.css.map */

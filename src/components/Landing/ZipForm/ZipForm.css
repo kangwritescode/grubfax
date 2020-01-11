@@ -8,6 +8,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-top: 2em;
+  opacity: 0;
 }
 
 .ZipForm__spinner-container {
