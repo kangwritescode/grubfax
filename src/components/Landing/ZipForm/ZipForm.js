@@ -3,18 +3,15 @@ import './ZipForm.css'
 import axios from 'axios'
 
 const ZipForm = ({ setAddressData }) => {
-
-
   const [zipInput, setZipInput] = useState(94301)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     document.querySelector('.ZipForm__input').focus()
-    return () => {
+    return () => {}
+  }, [])
 
-    };
-  }, []);
-
-  function updateInput(e) {
+  function updateInput (e) {
     let value = e.target.value
     if (value.toString().length <= 5) {
       setZipInput(value)
@@ -22,13 +19,14 @@ const ZipForm = ({ setAddressData }) => {
   }
 
   const fetchAddressFromZipcode = async zipCode => {
+    setLoading(true)
     return axios
       .get(
         'https://www.zipcodeapi.com/rest/' +
-        'js-zF10dQxfazt7cMgYnzZphQk7jEzBwBYPb781ubkqZokAXEvUzbinxdGT5rzVrkmB' +
-        '/info.json/' +
-        zipCode +
-        '/degrees'
+          'js-zF10dQxfazt7cMgYnzZphQk7jEzBwBYPb781ubkqZokAXEvUzbinxdGT5rzVrkmB' +
+          '/info.json/' +
+          zipCode +
+          '/degrees'
       )
       .then(res => {
         return res.data
@@ -48,6 +46,16 @@ const ZipForm = ({ setAddressData }) => {
 
   return (
     <form className='ZipForm'>
+      <div
+        className={`ZipForm__spinner-container ${
+          loading ? 'ZipForm__spinner-container--show' : null
+        }`}
+      >
+        <div className='lds-ripple'>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <input
         className='ZipForm__input'
         type='number'
