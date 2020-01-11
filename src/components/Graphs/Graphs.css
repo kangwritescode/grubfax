@@ -2,4 +2,12 @@
   min-width: 33em;
   max-width: 64em;
 }
+
+.Graphs__graph-wrapper {
+  border: 1px solid #b4b4b4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 2em;
+  padding: 1em;
+}
 /*# sourceMappingURL=Graphs.css.map */

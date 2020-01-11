@@ -1,4 +1,10 @@
 .Graphs {
     min-width: 33em;
     max-width: 64em;
+    &__graph-wrapper {
+        border: 1px solid rgb(180, 180, 180);
+        box-sizing: border-box;
+        margin-top: 2em;
+        padding: 1em;
+    }
 }

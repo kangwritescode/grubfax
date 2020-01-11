@@ -53,7 +53,7 @@ const Graphs = ({ data, city }) => {
   }, [data])
   return (
     <div className={`Graphs`}>
-      <div className={`Graphs__bar-graph`}>
+      <div className={`Graphs__graph-wrapper`}>
         <Bar
           data={chartData}
           options={{
@@ -62,7 +62,7 @@ const Graphs = ({ data, city }) => {
               text: `Prices of Food in ${city} - Bar Graph`,
               fontSize: 18,
               fontColor: 'white',
-              padding: 40
+              padding: 20
             },
             legend: {
               display: false,
@@ -71,7 +71,7 @@ const Graphs = ({ data, city }) => {
           }}
         />
       </div>
-      <div className={`Graphs__pie-chart`}>
+      <div className={`Graphs__graph-wrapper`}>
         <Pie
           data={chartData}
           options={{
@@ -80,7 +80,7 @@ const Graphs = ({ data, city }) => {
               text: `Prices of Food in ${city} - Pie Chart`,
               fontSize: 18,
               fontColor: 'white',
-              padding: 40
+              padding: 20
             },
             legend: {
               display: true,
