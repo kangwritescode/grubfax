@@ -18,7 +18,6 @@ const DataView = ({ restuarantData, addressData, filters, setFilters }) => {
   function filterRestaurantData(data) {
     if (filters.cuisine !== 'cuisine') {
       data = data.filter(({ restaurant }) => {
-        console.log(restaurant.establishment)
         let cuisine = restaurant['cuisines'].split(', ').length > 0
           ? restaurant['cuisines'].split(', ')[0]
           : null
