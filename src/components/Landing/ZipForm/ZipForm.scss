@@ -1,0 +1,63 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/fonts.scss";
+@import "../../../styles//colors.scss";
+
+.ZipForm {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+
+    &__input {
+        position: relative;
+        z-index: 1;
+
+        // box model
+        border: 1px solid white;
+        background: transparent;
+        height: 36px;
+        width: 5.6em;
+        border-top-left-radius: 0.2em;
+        border-bottom-left-radius: 0.2em;
+
+        // text
+        color: white;
+        letter-spacing: 0.3em;
+        text-align: center;
+        font-size: 1.5em;
+
+        &::placeholder {
+            letter-spacing: 0.1em;
+        }
+    }
+
+    &__button {
+        // box model
+        height: 40px;
+        border: 1px solid white;
+        border-left: none;
+        border-top-right-radius: 0.4em;
+        border-bottom-right-radius: 0.4em;
+        padding: 10px;
+
+        // text
+        font-size: 1.1em;
+
+        // other
+        background: $colorTwo;
+
+        &:hover {
+            cursor: pointer;
+            background:#e5c0ad;
+        }
+        &:active {
+            background: #ebb9a0;
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

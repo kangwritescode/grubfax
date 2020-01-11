@@ -1,0 +1,76 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/colors.scss";
+
+.FilterModule {
+    &__row {
+        position: relative;
+        margin-top: 1em;
+        border: 1px solid white;
+        z-index: 3;
+        display: flex;
+        min-width: 33em;
+        width: auto;
+        justify-content: space-evenly;
+        max-width: 64em;
+    }
+
+    &__filter-button {
+        position: relative;
+        background: transparent;
+        color: $colorFive;
+        height: 3em;
+        width: 100%;
+        font-size: 1em;
+        font-family: $fontOne;
+        @include flex-centered(row);
+        cursor: pointer;
+        &:hover {
+            background: rgba(255, 255, 255, 0.075);
+        }
+    }
+    &__controller {
+        margin: 6px 0px;
+        box-sizing: border-box;
+        width: 31%;
+        min-width: 6em;
+        border: 1px solid rgb(145, 145, 145);
+        text-align: center;
+        position: relative;
+        @include flex-centered(column);
+
+        cursor: pointer;
+    }
+    &__params-list {
+        position: absolute;
+        list-style: none;
+        text-align: left;
+        top: 2em;
+        padding: 2px;
+        left: -2px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.911);
+        z-index: 6;
+
+        li {
+            border: 1px solid rgb(121, 121, 121);
+            margin: 5px 3px;
+            text-align: center;
+            &:hover {
+                background: rgba(255, 255, 255, 0.068);
+            }
+        }
+    }
+
+    &__flex-column {
+        height: 100%;
+        width: 100%;
+        @include flex-centered(column);
+    }
+}
+.collapsed {
+    display: none;
+}
+.expanded {
+    height: auto;
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,SAAS,EAAE,IAAI;EACf,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "Graphs.scss"
+    ],
+    "names": [],
+    "file": "Graphs.css"
+}
