@@ -3,7 +3,6 @@ import './DataView.css'
 import DataTable from '../DataTable/DataTable'
 import Graphs from '../Graphs/Graphs'
 import FilterModule from '../FilterModule/FilterModule'
-import { priceDict } from '../../shared/priceDict'
 
 const DataView = ({ restuarantData, addressData, filters, setFilters }) => {
   const [data, setData] = useState([])

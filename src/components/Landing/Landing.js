@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Landing.css'
 import ZipForm from './ZipForm/ZipForm'
 import 'react-awesome-button/dist/styles.css'
