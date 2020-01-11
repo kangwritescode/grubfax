@@ -30,18 +30,6 @@
   color: salmon;
 }
 
-.DataView__table-wrapper {
-  position: relative;
-  margin-top: 2em;
-  padding-bottom: 1em;
-  max-height: 25em;
-  min-width: 33em;
-  max-width: 64em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow: auto;
-}
-
 #filter-label {
   display: inline-block;
   margin-top: 2em;

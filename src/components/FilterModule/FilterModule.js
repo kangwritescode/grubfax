@@ -3,11 +3,14 @@ import './FilterModule.css'
 import { priceDict } from '../../shared/priceDict'
 
 const FilterModule = ({ data, filters, setFilters }) => {
+  // data for dynamic dropdown list options
   const [filterLists, setFilterLists] = useState({
     cuisine: [],
     type: [],
     price: []
   })
+
+  // for UI "active" classes
   const [dropdownStatus, setDropdownStatus] = useState({
     cuisine: false,
     type: false,
@@ -16,7 +19,7 @@ const FilterModule = ({ data, filters, setFilters }) => {
 
   // componentDidMount
   useEffect(() => {
-    function closeDropdowns(e) {
+    function closeDropdowns (e) {
       if (e.target.className !== 'FilterModule__filter-button') {
         toggleDropdown('')
       }
@@ -27,22 +30,7 @@ const FilterModule = ({ data, filters, setFilters }) => {
     }
   }, [])
 
-  function toggleDropdown(filter) {
-    setDropdownStatus({
-      cuisine: false,
-      type: false,
-      price: false,
-      [filter]: true
-    })
-  }
-
-  function updateFilters(param, value) {
-    setFilters({
-      ...filters,
-      [param]: value
-    })
-  }
-
+  // filters redundant data so options aren't repeated
   useEffect(() => {
     if (data) {
       let cuisinesSet = new Set()
@@ -63,10 +51,27 @@ const FilterModule = ({ data, filters, setFilters }) => {
         price: Array.from(priceSet)
       })
     }
-    return () => { }
+    return () => {}
   }, [data])
 
-  function getCuisine(cuisines) {
+  // UI functions for dropdown "active" and "unactive" states
+  function toggleDropdown (filter) {
+    setDropdownStatus({
+      cuisine: false,
+      type: false,
+      price: false,
+      [filter]: true
+    })
+  }
+  function updateFilters (param, value) {
+    setFilters({
+      ...filters,
+      [param]: value
+    })
+  }
+
+  // helper function for getting first cuisine value in an array from API
+  function getCuisine (cuisines) {
     let cuisine =
       cuisines.split(', ').length > 0 ? cuisines.split(', ')[0] : null
     return cuisine
@@ -74,22 +79,31 @@ const FilterModule = ({ data, filters, setFilters }) => {
 
   const filterKeys = Object.keys(filterLists)
 
+  // for each filter parameter...
+  //    return a controller which has a button (e.g. 'cuisine')
+  //    and unordered list (the options for 'cuisine)
   let controllers = filterKeys.map(filterName => {
     return (
       <div className={`FilterModule__controller`}>
         <div className={`FilterModule__flex-column`}>
           <button
             className='FilterModule__filter-button'
-            onClick={() => toggleDropdown(filterName)}>
-            {filterName === 'price' ? priceDict[filters[filterName]] : filters[filterName]}
+            onClick={() => toggleDropdown(filterName)}
+          >
+            {filterName === 'price'
+              ? priceDict[filters[filterName]]
+              : filters[filterName]}
           </button>
+
           <ul
             className={`FilterModule__params-list ${
               dropdownStatus[filterName] ? 'expanded' : 'collapsed'
-              }`}>
+            }`}
+          >
             <li
               key={filterName}
-              onClick={() => updateFilters(filterName, filterName)}>
+              onClick={() => updateFilters(filterName, filterName)}
+            >
               {filterName}
             </li>
             {filterLists[filterName].map(item => {

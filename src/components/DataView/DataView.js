@@ -8,31 +8,35 @@ import { priceDict } from '../../shared/priceDict'
 const DataView = ({ restuarantData, addressData, filters, setFilters }) => {
   const [data, setData] = useState([])
 
+  
   useEffect(() => {
     if (restuarantData) {
       setData(restuarantData)
     }
-    return () => { }
+    return () => {}
   }, [restuarantData])
 
-  function filterRestaurantData(data) {
-    
+  function filterRestaurantData (data) {
     if (filters.cuisine !== 'cuisine') {
       data = data.filter(({ restaurant }) => {
-        let cuisine = restaurant['cuisines'].split(', ').length > 0
-          ? restaurant['cuisines'].split(', ')[0]
-          : null
+        let cuisine =
+          restaurant['cuisines'].split(', ').length > 0
+            ? restaurant['cuisines'].split(', ')[0]
+            : null
         return filters.cuisine === cuisine
       })
     }
     if (filters.type !== 'type') {
       data = data.filter(({ restaurant: { establishment } }) => {
-        let type = establishment && establishment.length > 0 ? establishment[0] : null
+        let type =
+          establishment && establishment.length > 0 ? establishment[0] : null
         return type === filters.type
       })
     }
     if (filters.price !== 'price') {
-      data = data.filter(({ restaurant }) => filters.price === restaurant.price_range)
+      data = data.filter(
+        ({ restaurant }) => filters.price === restaurant.price_range
+      )
     }
     return data
   }
@@ -51,9 +55,7 @@ const DataView = ({ restuarantData, addressData, filters, setFilters }) => {
       </header>
       <label id='filter-label'>Filter: </label>
       <FilterModule data={data} filters={filters} setFilters={setFilters} />
-      <div className={`DataView__table-wrapper`}>
-        <DataTable data={filteredData} />
-      </div>
+      <DataTable data={filteredData} />
       <Graphs data={filteredData} city={addressData.city}></Graphs>
     </div>
   )

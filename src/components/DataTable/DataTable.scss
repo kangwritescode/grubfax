@@ -1,6 +1,25 @@
 @import '../../styles/colors.scss';
 
 
+
+
+.DataTable {
+
+    // position
+    position: relative;
+
+    // box
+    margin-top: 2em;
+    padding-bottom: 1em;
+    max-height: 25em;
+    min-width: 33em;
+    max-width: 64em;
+    box-sizing: border-box;
+
+    // other
+    overflow: auto;
+}
+
 table,
 th,
 td {
