@@ -17,5 +17,6 @@ th {
 table {
   border-collapse: collapse;
   font-size: .8em;
+  width: 100%;
 }
 /*# sourceMappingURL=DataTable.css.map */

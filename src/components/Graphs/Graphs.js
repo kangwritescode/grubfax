@@ -49,43 +49,48 @@ const Graphs = ({ data, city }) => {
         ]
       })
     }
-    return () => {}
+    return () => { }
   }, [data])
   return (
     <div className={`Graphs`}>
-      <Bar
-        data={chartData}
-        options={{
-          title: {
-            display: true,
-            text: `Prices of Food in ${city} - Bar Graph`,
-            fontSize: 20,
-            fontColor: 'white',
-            padding: 40
-          },
-          legend: {
-            display: false,
-          },
-          defaultFontColor: 'white'
-        }}
-      />
-      <Pie
-        data={chartData}
-        options={{
-          title: {
-            display: true,
-            text: `Prices of Food in ${city} - Pie Chart`,
-            fontSize: 20,
-            fontColor: 'white',
-            padding: 40
-          },
-          legend: {
-            display: true,
-            position: 'bottom'
-          },
-          defaultFontColor: 'white'
-        }}
-      />
+      <div className={`Graphs__bar-graph`}>
+        <Bar
+          data={chartData}
+          options={{
+            title: {
+              display: true,
+              text: `Prices of Food in ${city} - Bar Graph`,
+              fontSize: 18,
+              fontColor: 'white',
+              padding: 40
+            },
+            legend: {
+              display: false,
+            },
+            defaultFontColor: 'white'
+          }}
+        />
+      </div>
+      <div className={`Graphs__pie-chart`}>
+        <Pie
+          data={chartData}
+          options={{
+            title: {
+              display: true,
+              text: `Prices of Food in ${city} - Pie Chart`,
+              fontSize: 18,
+              fontColor: 'white',
+              padding: 40
+            },
+            legend: {
+              display: true,
+              position: 'bottom'
+            },
+            defaultFontColor: 'white'
+          }}
+        />
+      </div>
+
     </div>
   )
 }

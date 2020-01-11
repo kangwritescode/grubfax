@@ -5,8 +5,8 @@
 .FilterModule {
     &__row {
         position: relative;
-        margin-top: 1em;
-        border: 1px solid white;
+        margin-top: .3em;
+        border: 1px solid rgb(196, 196, 196);
         z-index: 3;
         display: flex;
         min-width: 33em;
@@ -19,7 +19,8 @@
         position: relative;
         background: transparent;
         color: $colorFive;
-        height: 3em;
+        height: 2em;
+        border: 1px solid rgb(180, 180, 180);
         width: 100%;
         font-size: 1em;
         font-family: $fontOne;
@@ -34,7 +35,6 @@
         box-sizing: border-box;
         width: 32%;
         min-width: 6em;
-        border: 1px solid rgb(145, 145, 145);
         text-align: center;
         position: relative;
         @include flex-centered(column);

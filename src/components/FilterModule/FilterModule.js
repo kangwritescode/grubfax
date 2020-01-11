@@ -81,7 +81,7 @@ const FilterModule = ({ data, filters, setFilters }) => {
           <button
             className='FilterModule__filter-button'
             onClick={() => toggleDropdown(filterName)}>
-            {filterName === 'price' ? priceDict[filters[filterName]] : filters[filterName]} <i class='fas fa-chevron-down'></i>
+            {filterName === 'price' ? priceDict[filters[filterName]] : filters[filterName]}
           </button>
           <ul
             className={`FilterModule__params-list ${
