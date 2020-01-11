@@ -1,6 +1,6 @@
 import React from 'react'
 import './Landing.css'
-import ZipForm from './ZipForm/ZipForm'
+import ZipForm from '../ZipForm/ZipForm'
 import 'react-awesome-button/dist/styles.css'
 
 const Landing = ({ setAddressData }) => {

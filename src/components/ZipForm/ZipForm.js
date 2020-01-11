@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './ZipForm.css'
 import axios from 'axios'
-import Spinner from '../../../shared/UI/Spinner'
+import Spinner from '../../shared/UI/Spinner'
+import { ZOMATO_API_KEY } from '../../keys/keys'
 
 const ZipForm = ({ setAddressData }) => {
-
-
-
   const [zipInput, setZipInput] = useState(94301)
   const [loading, setLoading] = useState(false)
-
 
   // componentDidMount
   useEffect(() => {
@@ -29,7 +26,7 @@ const ZipForm = ({ setAddressData }) => {
     return axios
       .get(
         'https://www.zipcodeapi.com/rest/' +
-          'js-zF10dQxfazt7cMgYnzZphQk7jEzBwBYPb781ubkqZokAXEvUzbinxdGT5rzVrkmB' +
+          ZOMATO_API_KEY +
           '/info.json/' +
           zipCode +
           '/degrees'
