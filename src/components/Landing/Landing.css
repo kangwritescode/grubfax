@@ -36,8 +36,23 @@
 }
 
 .zoomOut {
-  -webkit-animation: zoomOut .8s ease-in-out forwards;
-          animation: zoomOut .8s ease-in-out forwards;
+  -webkit-animation: zoomOut 0.8s ease-in-out forwards;
+          animation: zoomOut 0.8s ease-in-out forwards;
+}
+
+.zoomInDown {
+  -webkit-animation: zoomInDown 1.7s ease-in;
+          animation: zoomInDown 1.7s ease-in;
+}
+
+.bounceInDown {
+  -webkit-animation: bounceInDown 0.4s ease-in 1.35s forwards;
+          animation: bounceInDown 0.4s ease-in 1.35s forwards;
+}
+
+.bounceInRight {
+  -webkit-animation: bounceInRight 1.2s ease-in 1.6s forwards;
+          animation: bounceInRight 1.2s ease-in 1.6s forwards;
 }
 
 @-webkit-keyframes zoomOut {
@@ -70,30 +85,6 @@
             transform: translateX(-50%);
     opacity: 0;
   }
-}
-
-@media screen and (max-width: 35em) {
-  .Landing__header {
-    font-size: 16vw;
-  }
-  .Landing__sub-header {
-    font-size: 4.4vw;
-  }
-}
-
-.zoomInDown {
-  -webkit-animation: zoomInDown 1.7s ease-in;
-          animation: zoomInDown 1.7s ease-in;
-}
-
-.bounceInDown {
-  -webkit-animation: bounceInDown 0.4s ease-in 1.35s forwards;
-          animation: bounceInDown 0.4s ease-in 1.35s forwards;
-}
-
-.bounceInRight {
-  -webkit-animation: bounceInRight 1.2s ease-in 1.6s forwards;
-          animation: bounceInRight 1.2s ease-in 1.6s forwards;
 }
 
 @-webkit-keyframes zoomInDown {
@@ -231,6 +222,15 @@
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 35em) {
+  .Landing__header {
+    font-size: 16vw;
+  }
+  .Landing__sub-header {
+    font-size: 4.4vw;
   }
 }
 /*# sourceMappingURL=Landing.css.map */

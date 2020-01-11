@@ -1,27 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 .FilterModule__row {
   position: relative;
+  max-width: 64em;
   margin-top: 0.3em;
   border: 1px solid #c4c4c4;
   z-index: 3;
+  min-width: 33em;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-width: 33em;
-  width: auto;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  max-width: 64em;
 }
 
 .FilterModule__filter-button {
   position: relative;
-  background: transparent;
-  color: #c8cc92;
   height: 2em;
   border: 1px solid #b4b4b4;
   width: 100%;
+  background: transparent;
+  color: #c8cc92;
   letter-spacing: 3px;
   font-size: 1em;
   font-family: "Space Mono", monospace;
@@ -46,13 +46,13 @@
 }
 
 .FilterModule__controller {
+  position: relative;
   margin: 6px 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 32%;
   min-width: 6em;
   text-align: center;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,20 +71,20 @@
 
 .FilterModule__params-list {
   position: absolute;
-  list-style: none;
-  text-align: left;
   top: 1.8em;
-  padding: 2px;
   left: -2px;
+  z-index: 6;
+  padding: 2px;
   width: 100%;
   background: rgba(0, 0, 0, 0.856);
   border: 1px solid rgba(255, 255, 255, 0.281);
-  z-index: 6;
+  text-align: left;
+  list-style: none;
 }
 
 .FilterModule__params-list li {
-  border: 1px solid #797979;
   margin: 8px 7px;
+  border: 1px solid #797979;
   background: rgba(175, 175, 175, 0.075);
   text-align: center;
 }
@@ -117,8 +117,8 @@
 
 .expanded {
   height: auto;
-  -webkit-animation: expand .3s ease-in;
-          animation: expand .3s ease-in;
+  -webkit-animation: expand 0.3s ease-in;
+          animation: expand 0.3s ease-in;
 }
 
 @-webkit-keyframes expand {
@@ -128,8 +128,9 @@
             transform: translateY(-20px);
   }
   50% {
-    opacity: .9;
-    transforM: translateY(1px);
+    opacity: 0.9;
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
   }
   to {
     opacity: 1;
@@ -145,8 +146,9 @@
             transform: translateY(-20px);
   }
   50% {
-    opacity: .9;
-    transforM: translateY(1px);
+    opacity: 0.9;
+    -webkit-transform: translateY(1px);
+            transform: translateY(1px);
   }
   to {
     opacity: 1;

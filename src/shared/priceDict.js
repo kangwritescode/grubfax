@@ -1,3 +1,5 @@
+// dictionary that converts Zomato Api price values for user readability
+
 export const priceDict = {
     1: 'cheap',
     2: 'low',

@@ -7,6 +7,9 @@ import axios from './axios'
 import DataView from './components/DataView/DataView'
 
 function App () {
+  // data states:
+  //     address data fetched from ZipCodeApi
+  //     restaurant data fetched form ZomatoAPI
   const [addressData, setAddressData] = useState(null)
   const [restuarantData, setRestuarantData] = useState(null)
   const [showDataView, setShowDataView] = useState(false)
@@ -16,14 +19,20 @@ function App () {
     price: 'price'
   })
 
-  const fetchZomatoData = async (lat, lng) => {
-    await axios
-      .get(`v2.1/search?lat=${lat}&lon=${lng}&start=${1}&count=20`)
-      .then(data => setRestuarantData(data.data.restaurants))
-      .catch(err => console.log(err))
-  }
 
+
+  // This middleware...
+  //     1) fetches Zomato data when restaurant data is received
+  //     2) shows data view when restaurant data is received
   useEffect(() => {
+    
+    const fetchZomatoData = async (lat, lng) => {
+      await axios
+        .get(`v2.1/search?lat=${lat}&lon=${lng}&start=${1}&count=20`)
+        .then(data => setRestuarantData(data.data.restaurants))
+        .catch(err => console.log(err))
+    }
+
     if (addressData && !restuarantData) {
       let { lat, lng } = addressData
       fetchZomatoData(lat, lng)
@@ -39,6 +48,8 @@ function App () {
     }
   }, [addressData, restuarantData])
 
+
+  // This app has two views:
   let view = showDataView ? (
     <DataView
       addressData={addressData}
@@ -51,6 +62,7 @@ function App () {
       setAddressData={setAddressData}
     />
   )
+
   return (
     <div className='App'>
       <Background>{view}</Background>

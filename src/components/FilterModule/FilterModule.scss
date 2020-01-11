@@ -4,59 +4,88 @@
 
 .FilterModule {
     &__row {
+        // position
         position: relative;
+        max-width: 64em;
+
+        // box
         margin-top: 0.3em;
         border: 1px solid rgb(196, 196, 196);
         z-index: 3;
-        display: flex;
         min-width: 33em;
         width: auto;
+
+        // display
+        display: flex;
         justify-content: space-evenly;
-        max-width: 64em;
     }
 
     &__filter-button {
+        // position
         position: relative;
-        background: transparent;
-        color: $colorFive;
+
+        // box
         height: 2em;
         border: 1px solid rgb(180, 180, 180);
         width: 100%;
+        background: transparent;
+
+        // text
+        color: $colorFive;
         letter-spacing: 3px;
         font-size: 1em;
         font-family: $fontOne;
+
+        // display
         @include flex-centered(row);
+
+        //other
         cursor: pointer;
+
         &:hover {
             background: rgba(255, 255, 255, 0.075);
         }
     }
     &__controller {
+        // positon
+        position: relative;
+
+        // box
         margin: 6px 0px;
         box-sizing: border-box;
         width: 32%;
         min-width: 6em;
+
+        // text
         text-align: center;
-        position: relative;
+
+        // display
         @include flex-centered(column);
 
         cursor: pointer;
     }
     &__params-list {
+        // positon
         position: absolute;
-        list-style: none;
-        text-align: left;
         top: 1.8em;
-        padding: 2px;
         left: -2px;
+        z-index: 6;
+
+        // box
+        padding: 2px;
         width: 100%;
         background: rgba(0, 0, 0, 0.856);
         border: 1px solid rgba(255, 255, 255, 0.281);
-        z-index: 6;
+
+        // text
+        text-align: left;
+
+        // other
+        list-style: none;
 
         li {
-            border: 1px solid rgb(121, 121, 121);
             margin: 8px 7px;
+            border: 1px solid rgb(121, 121, 121);
             background: rgba(175, 175, 175, 0.075);
             text-align: center;
             &:hover {
@@ -76,7 +105,7 @@
 }
 .expanded {
     height: auto;
-    animation: expand .3s ease-in;
+    animation: expand 0.3s ease-in;
 }
 
 @keyframes expand {
@@ -85,8 +114,8 @@
         transform: translateY(-20px);
     }
     50% {
-        opacity: .9;
-        transforM: translateY(1px);
+        opacity: 0.9;
+        transform: translateY(1px);
     }
     to {
         opacity: 1;

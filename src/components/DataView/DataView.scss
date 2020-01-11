@@ -1,12 +1,16 @@
 @import "../../styles/colors.scss";
 
 .DataView {
+    // position
     position: relative;
+
+    // box
     height: 100vh;
     width: 100vw;
     padding: 4em 6em;
     box-sizing: border-box;
 
+    // other
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 0;
@@ -29,14 +33,19 @@
     }
 
     &__table-wrapper {
+        // position
         position: relative;
+
+        // box
         margin-top: 2em;
-        overflow: auto;
         padding-bottom: 1em;
         max-height: 25em;
         min-width: 33em;
         max-width: 64em;
         box-sizing: border-box;
+
+        // other
+        overflow: auto;
     }
 }
 
@@ -47,6 +56,7 @@
     font-size: 0.9em;
 }
 
+// Keyframes
 @-webkit-keyframes fadeInRight {
     from {
         opacity: 0;
@@ -75,6 +85,7 @@
     }
 }
 
+// media queries
 @media screen and (max-width: 600px) {
     .DataView {
         padding: 4em 2em;

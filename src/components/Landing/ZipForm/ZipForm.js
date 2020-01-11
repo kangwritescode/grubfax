@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import './ZipForm.css'
 import axios from 'axios'
+import Spinner from '../../../shared/UI/Spinner'
 
 const ZipForm = ({ setAddressData }) => {
+
+
+
   const [zipInput, setZipInput] = useState(94301)
   const [loading, setLoading] = useState(false)
 
+
+  // componentDidMount
   useEffect(() => {
     document.querySelector('.ZipForm__input').focus()
     return () => {}
   }, [])
 
-  function updateInput (e) {
+  function inputHandler (e) {
     let value = e.target.value
     if (value.toString().length <= 5) {
       setZipInput(value)
@@ -46,22 +52,13 @@ const ZipForm = ({ setAddressData }) => {
 
   return (
     <form className='ZipForm bounceInRight'>
-      <div
-        className={`ZipForm__spinner-container ${
-          loading ? 'ZipForm__spinner-container--show' : null
-        }`}
-      >
-        <div className='lds-ripple'>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+      <Spinner loading={loading} />
       <input
         className='ZipForm__input'
         type='number'
         placeholder='ZipCode'
         value={zipInput}
-        onChange={e => updateInput(e)}
+        onChange={e => inputHandler(e)}
       />
       <button className='ZipForm__button' onClick={e => getData(e)}>
         <i className='fa fa-search' aria-hidden='true'></i>
