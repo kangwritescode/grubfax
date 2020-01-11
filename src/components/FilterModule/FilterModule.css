@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 .FilterModule__row {
   position: relative;
-  margin-top: .3em;
+  margin-top: 0.3em;
   border: 1px solid #c4c4c4;
   z-index: 3;
   display: -webkit-box;
@@ -22,6 +22,7 @@
   height: 2em;
   border: 1px solid #b4b4b4;
   width: 100%;
+  letter-spacing: 3px;
   font-size: 1em;
   font-family: "Space Mono", monospace;
   display: -webkit-box;
@@ -72,17 +73,19 @@
   position: absolute;
   list-style: none;
   text-align: left;
-  top: 2em;
+  top: 1.8em;
   padding: 2px;
   left: -2px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.911);
+  background: rgba(0, 0, 0, 0.856);
+  border: 1px solid rgba(255, 255, 255, 0.281);
   z-index: 6;
 }
 
 .FilterModule__params-list li {
   border: 1px solid #797979;
-  margin: 5px 3px;
+  margin: 8px 7px;
+  background: rgba(175, 175, 175, 0.075);
   text-align: center;
 }
 

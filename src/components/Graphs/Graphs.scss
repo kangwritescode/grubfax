@@ -2,9 +2,14 @@
     min-width: 33em;
     max-width: 64em;
     &__graph-wrapper {
-        border: 1px solid rgb(180, 180, 180);
+        border: 1px solid rgba(255, 255, 255, 0.521);
         box-sizing: border-box;
         margin-top: 2em;
+        background: rgba(255, 255, 255, 0.575);
         padding: 1em;
+
+        &:last-child {
+            margin-bottom: 20em;
+        }
     }
 }

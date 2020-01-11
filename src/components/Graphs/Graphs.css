@@ -4,10 +4,15 @@
 }
 
 .Graphs__graph-wrapper {
-  border: 1px solid #b4b4b4;
+  border: 1px solid rgba(255, 255, 255, 0.521);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: 2em;
+  background: rgba(255, 255, 255, 0.575);
   padding: 1em;
+}
+
+.Graphs__graph-wrapper:last-child {
+  margin-bottom: 20em;
 }
 /*# sourceMappingURL=Graphs.css.map */

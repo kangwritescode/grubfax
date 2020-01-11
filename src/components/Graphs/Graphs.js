@@ -3,7 +3,7 @@ import './Graphs.css'
 import { Pie, Bar, defaults } from 'react-chartjs-2'
 
 defaults.global.defaultFontFamily = 'Space Mono'
-defaults.global.defaultFontColor = "white"
+defaults.global.defaultFontColor = "black"
 
 const Graphs = ({ data, city }) => {
   const [chartData, setChartData] = useState({})
@@ -59,9 +59,9 @@ const Graphs = ({ data, city }) => {
           options={{
             title: {
               display: true,
-              text: `Prices of Food in ${city} - Bar Graph`,
+              text: `Prices of Food in ${city}`,
               fontSize: 18,
-              fontColor: 'white',
+              fontColor: 'black',
               padding: 20
             },
             legend: {
@@ -77,16 +77,16 @@ const Graphs = ({ data, city }) => {
           options={{
             title: {
               display: true,
-              text: `Prices of Food in ${city} - Pie Chart`,
+              text: `Prices of Food in ${city}`,
               fontSize: 18,
-              fontColor: 'white',
+              fontColor: 'black',
               padding: 20
             },
             legend: {
               display: true,
               position: 'bottom'
             },
-            defaultFontColor: 'white'
+            defaultFontColor: 'black'
           }}
         />
       </div>

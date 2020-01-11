@@ -5,7 +5,7 @@
 .FilterModule {
     &__row {
         position: relative;
-        margin-top: .3em;
+        margin-top: 0.3em;
         border: 1px solid rgb(196, 196, 196);
         z-index: 3;
         display: flex;
@@ -22,6 +22,7 @@
         height: 2em;
         border: 1px solid rgb(180, 180, 180);
         width: 100%;
+        letter-spacing: 3px;
         font-size: 1em;
         font-family: $fontOne;
         @include flex-centered(row);
@@ -45,16 +46,18 @@
         position: absolute;
         list-style: none;
         text-align: left;
-        top: 2em;
+        top: 1.8em;
         padding: 2px;
         left: -2px;
         width: 100%;
-        background: rgba(0, 0, 0, 0.911);
+        background: rgba(0, 0, 0, 0.856);
+        border: 1px solid rgba(255, 255, 255, 0.281);
         z-index: 6;
 
         li {
             border: 1px solid rgb(121, 121, 121);
-            margin: 5px 3px;
+            margin: 8px 7px;
+            background: rgba(175, 175, 175, 0.075);
             text-align: center;
             &:hover {
                 background: rgba(255, 255, 255, 0.068);
