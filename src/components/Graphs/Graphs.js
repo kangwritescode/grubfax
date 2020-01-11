@@ -33,7 +33,8 @@ const Graphs = ({ data, city }) => {
             default:
           }
         })
-        chartDataCreator(cheap, low, medium, high)
+        let chartData = chartDataCreator(cheap, low, medium, high)
+        setChartData(chartData)
       }
       return () => {}
     },
